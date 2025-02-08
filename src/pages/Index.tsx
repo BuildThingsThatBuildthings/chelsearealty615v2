@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,11 +7,26 @@ const Index = () => {
   const [email, setEmail] = useState("");
 
   const areas = [
-    { name: "Hendersonville", description: "Lakeside living with modern amenities" },
-    { name: "Gallatin", description: "Historic charm meets growing opportunities" },
-    { name: "White House", description: "Peaceful suburban community" },
-    { name: "Green Briar", description: "Rural charm with city access" },
-    { name: "Goodlettsville", description: "Family-friendly neighborhood hub" }
+    { 
+      name: "Family-Focused Living",
+      description: "Find top-rated schools, safe neighborhoods, and family-friendly activities - perfect for growing families looking for their ideal community."
+    },
+    { 
+      name: "Investment Potential",
+      description: "Navigate Nashville's strong real estate market with data-driven insights on property appreciation and rental opportunities."
+    },
+    { 
+      name: "Lifestyle Match",
+      description: "Match your lifestyle with the perfect location - whether you need quick commute access or prefer peaceful suburban living."
+    },
+    { 
+      name: "Custom Roadmap",
+      description: "Get a personalized plan for your home transition, from market timing to financing options and moving logistics."
+    },
+    { 
+      name: "Market Advantage",
+      description: "Leverage Nashville's robust job market and affordable cost of living to make a smart, long-term investment in your future."
+    }
   ];
 
   const features = [
@@ -73,7 +87,10 @@ const Index = () => {
       {/* Areas Section */}
       <section className="py-20 px-4 bg-secondary">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Featured Areas</h2>
+          <h2 className="text-4xl font-bold text-center mb-6">Your Path to the Perfect Home</h2>
+          <p className="text-xl text-center text-muted-foreground mb-16 max-w-3xl mx-auto">
+            Whether you're prioritizing schools for your children, seeking investment opportunities, or looking for the perfect lifestyle match, we'll help you make the right choice for your family.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {areas.map((area, index) => (
               <Card 
