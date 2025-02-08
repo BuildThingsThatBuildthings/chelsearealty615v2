@@ -45,6 +45,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Agent Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold">Meet Your Agent</h2>
+              <p className="text-xl text-muted-foreground">
+                Chelsea Bobbitt is your dedicated real estate expert in North Nashville, bringing deep local knowledge and personalized service to every client.
+              </p>
+              <p className="text-muted-foreground">
+                With extensive experience in the North Nashville market, Chelsea specializes in helping families find their perfect homes in Hendersonville, Gallatin, White House, Green Briar, and Goodlettsville.
+              </p>
+              <Button className="bg-primary text-white">Connect with Chelsea</Button>
+            </div>
+            <div className="relative">
+              <img 
+                src="https://storage.googleapis.com/msgsndr/LXrM89iHSYvGb27k35cG/media/67a76467fc76858d0e110fef.png"
+                alt="Chelsea Bobbitt - Lead Real Estate Agent"
+                className="rounded-lg shadow-xl w-full object-cover hover:scale-[1.02] transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Areas Section */}
       <section className="py-20 px-4 bg-secondary">
         <div className="max-w-7xl mx-auto">
@@ -83,7 +108,7 @@ const Index = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">Ready to Find Your Dream Home?</h2>
           <p className="text-xl mb-12 opacity-90">
-            Let us guide you through the perfect properties in North Nashville
+            Let Chelsea guide you through the perfect properties in North Nashville
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
             <Input
