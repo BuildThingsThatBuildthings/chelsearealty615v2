@@ -40,6 +40,18 @@ export default function Hendersonville() {
             </p>
           </div>
 
+          {/* Audio Player */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Listen to a podcast version of the report</h2>
+            <div className="bg-muted/30 p-6 rounded-lg">
+              <audio controls className="w-full mb-2">
+                <source src="/src/pages/audio_reports/Hendersonville, TN_ A Parent's Relocation Guide.wav" type="audio/wav" />
+                Your browser does not support the audio element.
+              </audio>
+              <p className="text-sm text-muted-foreground text-center">Feature currently in beta</p>
+            </div>
+          </div>
+
           {/* Key Metrics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <Card>
