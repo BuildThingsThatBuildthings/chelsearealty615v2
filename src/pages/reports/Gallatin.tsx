@@ -1,83 +1,133 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
+import { Card, CardContent } from "@/components/ui/card"
 
-export default function GallatinReport() {
+export default function Gallatin() {
   return (
-    <div className="container mx-auto py-8 space-y-6">
-      <div className="space-y-2">
-        <h1 className="text-4xl font-bold">Discover Gallatin, TN: A Welcoming Hometown for Your Family</h1>
-        <p className="text-xl text-muted-foreground">
-          Explore excellent schools, safe neighborhoods, and family-friendly activities in this charming Tennessee city.
-        </p>
-      </div>
+    <div className="container mx-auto py-12">
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-6">
+          <Button variant="outline" asChild>
+            <Link to="/research-library">← Back to Library</Link>
+          </Button>
+        </div>
 
-      <div className="grid gap-6">
-        <Card>
-          <CardContent className="pt-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <h2 className="text-2xl font-semibold">Education</h2>
-                <Badge>A- Rating</Badge>
-              </div>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Sumner County School District manages Gallatin's public schools, serving students from pre-K to 12th grade with a strong commitment to quality education.</li>
-                <li>Highly regarded in Tennessee with an A- grade from Niche.com.</li>
-                <li>Average teacher salary: $54,305 with a student-teacher ratio of 15:1.</li>
-                <li>Private school options include Sumner Academy and St. John Vianney Catholic School (both pre-K through 8th grade).</li>
-                <li>Various after-school programs available to keep children engaged beyond traditional school hours.</li>
-              </ul>
+        <article className="prose prose-lg max-w-none">
+          {/* Report Header */}
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold mb-4">Discover Gallatin, TN: A Welcoming Hometown for Your Family</h1>
+            <p className="text-xl text-muted-foreground mb-2">
+              Explore excellent schools, safe neighborhoods, and family-friendly activities in this charming Tennessee city
+            </p>
+            <div className="flex gap-4 text-sm text-muted-foreground">
+              <span>Published February 2024</span>
+              <span>•</span>
+              <span>Location: Sumner County, TN</span>
+              <span>•</span>
+              <span>Target: Family Homebuyers</span>
             </div>
-          </CardContent>
-        </Card>
+          </div>
 
-        <Card>
-          <CardContent className="pt-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <h2 className="text-2xl font-semibold">Safety & Crime</h2>
-                <Badge variant="secondary">81% Feel Safe</Badge>
-              </div>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Crime rate of 1,292 per 100,000 people, significantly lower than state and national averages.</li>
-                <li>Violent crime rate of 307 per 100,000 people, below state and national averages.</li>
-                <li>81% of residents feel safe: 29% feel "very safe" and 52% feel "pretty safe".</li>
-                <li>Dedicated police department committed to maintaining high quality of life.</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
+          {/* Executive Summary */}
+          <div className="bg-muted/50 p-6 rounded-lg mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Executive Summary</h2>
+            <p>
+              Gallatin stands out as an exceptional choice for families in Middle Tennessee, 
+              combining educational excellence, community safety, and abundant recreational opportunities. 
+              With its strong school system, low crime rates, and vibrant community life, 
+              Gallatin offers an ideal environment for families seeking a high quality of life 
+              with affordable living costs.
+            </p>
+          </div>
 
-        <Card>
-          <CardContent className="pt-6">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold">Family Activities & Recreation</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Multiple parks and recreational facilities for outdoor activities.</li>
-                <li>Municipal Park offers playground, walking trails, and skate park.</li>
-                <li>Triple Creek Park features playground, dog park, and all-inclusive Miracle Park for children of all abilities.</li>
-                <li>Regular community events including the Main Street Festival with over 200 vendors, live music, and children's area.</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
+          {/* Key Metrics Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">School District Rating</h3>
+                <div className="text-3xl font-bold text-primary mb-2">A-</div>
+                <p className="text-sm text-muted-foreground">Niche.com rating for Sumner County Schools</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Community Safety</h3>
+                <div className="text-3xl font-bold text-primary mb-2">81%</div>
+                <p className="text-sm text-muted-foreground">of residents feel safe in Gallatin</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Cost of Living</h3>
+                <div className="text-3xl font-bold text-primary mb-2">9% Lower</div>
+                <p className="text-sm text-muted-foreground">than national average</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Employment</h3>
+                <div className="text-3xl font-bold text-primary mb-2">3.20%</div>
+                <p className="text-sm text-muted-foreground">unemployment rate</p>
+              </CardContent>
+            </Card>
+          </div>
 
-        <Card>
-          <CardContent className="pt-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <h2 className="text-2xl font-semibold">Economy & Cost of Living</h2>
-                <Badge variant="secondary">9% Below National Average</Badge>
-              </div>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Strong and diverse economy with 3.20% unemployment rate (December 2024).</li>
-                <li>Projected job growth of 54.8% over the next ten years.</li>
-                <li>Overall cost of living is 9% lower than the national average.</li>
-                <li>Housing costs significantly lower than state and national averages.</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
+          {/* Detailed Sections */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Educational Excellence</h2>
+            <p className="mb-4">
+              The Sumner County School District provides comprehensive education from pre-K through 12th grade,
+              maintaining high standards and strong student outcomes.
+            </p>
+            <ul className="space-y-2">
+              <li>Highly regarded district with an A- rating from Niche.com</li>
+              <li>Excellent student-teacher ratio of 15:1</li>
+              <li>Average teacher salary of $54,305, attracting quality educators</li>
+              <li>Private school options including Sumner Academy and St. John Vianney Catholic School</li>
+              <li>Diverse after-school programs for extended learning opportunities</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Community Safety</h2>
+            <p className="mb-4">
+              Gallatin maintains a strong commitment to public safety, with crime rates significantly 
+              below state and national averages.
+            </p>
+            <ul className="space-y-2">
+              <li>Overall crime rate of 1,292 per 100,000 people</li>
+              <li>Violent crime rate of 307 per 100,000 people</li>
+              <li>81% of residents report feeling safe: 29% "very safe" and 52% "pretty safe"</li>
+              <li>Dedicated police department focused on maintaining high quality of life</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Family Activities & Recreation</h2>
+            <p className="mb-4">
+              Gallatin offers numerous recreational facilities and community events that cater to 
+              families of all ages and interests.
+            </p>
+            <ul className="space-y-2">
+              <li>Municipal Park with playground, walking trails, and skate park</li>
+              <li>Triple Creek Park featuring playground, dog park, and all-inclusive Miracle Park</li>
+              <li>Year-round community events and festivals</li>
+              <li>Main Street Festival with over 200 vendors, live music, and children's area</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Economy & Cost of Living</h2>
+            <p className="mb-4">
+              Gallatin's economy shows strong potential for continued growth, with a cost of living 
+              that remains accessible for families. The city's projected job growth of 54.8% over 
+              the next ten years indicates a robust economic future, while the current unemployment 
+              rate of 3.20% demonstrates stability. Housing costs remain significantly lower than 
+              both state and national averages, making homeownership more attainable for families.
+            </p>
+          </section>
+        </article>
       </div>
     </div>
-  );
+  )
 }
