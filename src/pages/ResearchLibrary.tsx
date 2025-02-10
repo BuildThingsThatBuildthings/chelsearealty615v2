@@ -4,6 +4,12 @@ import { Link } from "react-router-dom"
 
 const reports = [
   {
+    id: "white-house",
+    title: "Discover White House, TN: Your Family's Ideal Hometown",
+    description: "Explore excellent schools, safe neighborhoods, and family-friendly activities in this growing Tennessee town.",
+    date: "February 2024"
+  },
+  {
     id: "gallatin",
     title: "Discover Gallatin, TN: A Welcoming Hometown for Your Family",
     description: "Explore excellent schools, safe neighborhoods, and family-friendly activities in this charming Tennessee city.",
