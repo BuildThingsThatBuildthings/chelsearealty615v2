@@ -19,18 +19,13 @@ export default function Hendersonville() {
             <p className="text-xl text-muted-foreground mb-2">
               A comprehensive analysis for families seeking their ideal hometown in Middle Tennessee
             </p>
-            <div className="flex gap-4 text-sm text-muted-foreground mb-4">
+            <div className="flex gap-4 text-sm text-muted-foreground">
               <span>Published February 2024</span>
               <span>•</span>
               <span>Location: Sumner County, TN</span>
               <span>•</span>
               <span>Target: Family Homebuyers</span>
             </div>
-            <Button asChild className="mb-6">
-              <a href="https://docs.google.com/document/d/1jbt-X5rHmukYq9Bbz6k7bhPQXmtAA1C-0nxa_CtLcfw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                View Full Report on Google Docs →
-              </a>
-            </Button>
           </div>
 
           {/* Executive Summary */}
@@ -135,7 +130,7 @@ export default function Hendersonville() {
             </div>
           </section>
 
-          <section>
+          <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Economic Vitality</h2>
             <p className="mb-4">
               Hendersonville maintains a robust economy with diverse employment opportunities 
@@ -144,6 +139,15 @@ export default function Hendersonville() {
               residents.
             </p>
           </section>
+
+          {/* Full Report Link */}
+          <div className="mt-12 text-center">
+            <Button asChild size="lg">
+              <a href="https://docs.google.com/document/d/1jbt-X5rHmukYq9Bbz6k7bhPQXmtAA1C-0nxa_CtLcfw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                View Full Report on Google Docs →
+              </a>
+            </Button>
+          </div>
         </article>
       </div>
     </div>

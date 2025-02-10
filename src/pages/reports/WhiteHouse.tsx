@@ -19,21 +19,16 @@ export default function WhiteHouse() {
             <p className="text-xl text-muted-foreground mb-2">
               Explore excellent schools, safe neighborhoods, and family-friendly activities in this growing Tennessee town
             </p>
-            <div className="flex gap-4 text-sm text-muted-foreground mb-4">
+            <div className="flex gap-4 text-sm text-muted-foreground">
               <span>Published February 2024</span>
               <span>•</span>
               <span>Location: Sumner/Robertson Counties, TN</span>
               <span>•</span>
               <span>Target: Family Homebuyers</span>
             </div>
-            <Button asChild className="mb-6">
-              <a href="https://docs.google.com/document/d/18QmebaN0LAEfOWaGHgJasSmxgWjHm9nuHoxaeO_gGfg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                View Full Report on Google Docs →
-              </a>
-            </Button>
           </div>
 
-          {/* Rest of the content remains the same */}
+          {/* Executive Summary */}
           <div className="bg-muted/50 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-semibold mb-4">Executive Summary</h2>
             <p>
@@ -121,7 +116,7 @@ export default function WhiteHouse() {
             </ul>
           </section>
 
-          <section>
+          <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Economy & Housing</h2>
             <p className="mb-4">
               White House combines affordable living with strong economic opportunities, benefiting from 
@@ -133,6 +128,15 @@ export default function WhiteHouse() {
               for residents.
             </p>
           </section>
+
+          {/* Full Report Link */}
+          <div className="mt-12 text-center">
+            <Button asChild size="lg">
+              <a href="https://docs.google.com/document/d/18QmebaN0LAEfOWaGHgJasSmxgWjHm9nuHoxaeO_gGfg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                View Full Report on Google Docs →
+              </a>
+            </Button>
+          </div>
         </article>
       </div>
     </div>

@@ -19,18 +19,13 @@ export default function Gallatin() {
             <p className="text-xl text-muted-foreground mb-2">
               Explore excellent schools, safe neighborhoods, and family-friendly activities in this charming Tennessee city
             </p>
-            <div className="flex gap-4 text-sm text-muted-foreground mb-4">
+            <div className="flex gap-4 text-sm text-muted-foreground">
               <span>Published February 2024</span>
               <span>•</span>
               <span>Location: Sumner County, TN</span>
               <span>•</span>
               <span>Target: Family Homebuyers</span>
             </div>
-            <Button asChild className="mb-6">
-              <a href="https://docs.google.com/document/d/10_X_gYjm3kag5vBjioENT0mrLpoPsI-1KQfzHlZWkDo/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                View Full Report on Google Docs →
-              </a>
-            </Button>
           </div>
 
           {/* Executive Summary */}
@@ -121,7 +116,7 @@ export default function Gallatin() {
             </ul>
           </section>
 
-          <section>
+          <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Economy & Cost of Living</h2>
             <p className="mb-4">
               Gallatin's economy shows strong potential for continued growth, with a cost of living 
@@ -131,6 +126,15 @@ export default function Gallatin() {
               both state and national averages, making homeownership more attainable for families.
             </p>
           </section>
+
+          {/* Full Report Link */}
+          <div className="mt-12 text-center">
+            <Button asChild size="lg">
+              <a href="https://docs.google.com/document/d/10_X_gYjm3kag5vBjioENT0mrLpoPsI-1KQfzHlZWkDo/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                View Full Report on Google Docs →
+              </a>
+            </Button>
+          </div>
         </article>
       </div>
     </div>
