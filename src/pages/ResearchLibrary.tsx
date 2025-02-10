@@ -4,6 +4,12 @@ import { Link } from "react-router-dom"
 
 const reports = [
   {
+    id: "gallatin",
+    title: "Discover Gallatin, TN: A Welcoming Hometown for Your Family",
+    description: "Explore excellent schools, safe neighborhoods, and family-friendly activities in this charming Tennessee city.",
+    date: "February 2024"
+  },
+  {
     id: "hendersonville",
     title: "Discover Hendersonville, TN: Your Family's Ideal Hometown",
     description: "Comprehensive guide to Hendersonville's schools, safety, recreation, economy, and housing market for families considering relocation.",
