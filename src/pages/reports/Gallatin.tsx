@@ -45,7 +45,7 @@ export default function Gallatin() {
             <h2 className="text-2xl font-semibold mb-4">Listen to a podcast version of the report</h2>
             <div className="bg-muted/30 p-6 rounded-lg">
               <audio controls className="w-full mb-2">
-                <source src="/src/pages/audio_reports/Gallatin, TN_ A Parent's Relocation Guide.wav" type="audio/wav" />
+                <source src="/audio/gallatin.wav" type="audio/wav" />
                 Your browser does not support the audio element.
               </audio>
               <p className="text-sm text-muted-foreground text-center">Feature currently in beta</p>
