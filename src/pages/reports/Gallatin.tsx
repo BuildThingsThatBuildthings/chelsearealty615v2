@@ -19,13 +19,18 @@ export default function Gallatin() {
             <p className="text-xl text-muted-foreground mb-2">
               Explore excellent schools, safe neighborhoods, and family-friendly activities in this charming Tennessee city
             </p>
-            <div className="flex gap-4 text-sm text-muted-foreground">
+            <div className="flex gap-4 text-sm text-muted-foreground mb-4">
               <span>Published February 2024</span>
               <span>•</span>
               <span>Location: Sumner County, TN</span>
               <span>•</span>
               <span>Target: Family Homebuyers</span>
             </div>
+            <Button asChild className="mb-6">
+              <a href="https://docs.google.com/document/d/10_X_gYjm3kag5vBjioENT0mrLpoPsI-1KQfzHlZWkDo/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                View Full Report on Google Docs →
+              </a>
+            </Button>
           </div>
 
           {/* Executive Summary */}

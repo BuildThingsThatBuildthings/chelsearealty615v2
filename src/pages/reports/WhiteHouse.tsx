@@ -19,16 +19,21 @@ export default function WhiteHouse() {
             <p className="text-xl text-muted-foreground mb-2">
               Explore excellent schools, safe neighborhoods, and family-friendly activities in this growing Tennessee town
             </p>
-            <div className="flex gap-4 text-sm text-muted-foreground">
+            <div className="flex gap-4 text-sm text-muted-foreground mb-4">
               <span>Published February 2024</span>
               <span>•</span>
               <span>Location: Sumner/Robertson Counties, TN</span>
               <span>•</span>
               <span>Target: Family Homebuyers</span>
             </div>
+            <Button asChild className="mb-6">
+              <a href="https://docs.google.com/document/d/18QmebaN0LAEfOWaGHgJasSmxgWjHm9nuHoxaeO_gGfg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                View Full Report on Google Docs →
+              </a>
+            </Button>
           </div>
 
-          {/* Executive Summary */}
+          {/* Rest of the content remains the same */}
           <div className="bg-muted/50 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-semibold mb-4">Executive Summary</h2>
             <p>
