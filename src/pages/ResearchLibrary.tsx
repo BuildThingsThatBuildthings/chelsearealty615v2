@@ -20,24 +20,6 @@ const reports = [
     title: "Discover Hendersonville, TN: Your Family's Ideal Hometown",
     description: "Comprehensive guide to Hendersonville's schools, safety, recreation, economy, and housing market for families considering relocation.",
     date: "February 2024"
-  },
-  {
-    id: "market-trends",
-    title: "North Nashville Market Trends 2024",
-    description: "Comprehensive analysis of real estate market trends, pricing data, and growth projections for North Nashville neighborhoods.",
-    date: "February 2024"
-  },
-  {
-    id: "community-development",
-    title: "Community Development Impact Report",
-    description: "Detailed overview of ongoing and planned community development projects and their impact on North Nashville residents.",
-    date: "January 2024"
-  },
-  {
-    id: "neighborhood-guide",
-    title: "North Nashville Neighborhood Guide",
-    description: "In-depth exploration of North Nashville's diverse neighborhoods, local amenities, schools, and community features.",
-    date: "December 2023"
   }
 ]
 
@@ -53,7 +35,7 @@ export default function ResearchLibrary() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Research Library</h1>
         <p className="text-xl text-muted-foreground">
-          Gain valuable insights about living in North Nashville through our comprehensive research reports
+          Gain valuable insights about living in Middle Tennessee through our comprehensive city guides
         </p>
       </div>
 
