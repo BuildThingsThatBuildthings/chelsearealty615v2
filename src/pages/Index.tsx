@@ -3,67 +3,81 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [email, setEmail] = useState("");
 
   const areas = [
-    { 
+    {
       name: "Family-Focused Living",
-      description: "Find top-rated schools, safe neighborhoods, and family-friendly activities - perfect for growing families looking for their ideal community."
+      description:
+        "Find top-rated schools, safe neighborhoods, and family-friendly activities - perfect for growing families looking for their ideal community.",
     },
-    { 
+    {
       name: "Investment Potential",
-      description: "Navigate Nashville's strong real estate market with data-driven insights on property appreciation and rental opportunities."
+      description:
+        "Navigate Nashville's strong real estate market with data-driven insights on property appreciation and rental opportunities.",
     },
-    { 
+    {
       name: "Lifestyle Match",
-      description: "Match your lifestyle with the perfect location - whether you need quick commute access or prefer peaceful suburban living."
+      description:
+        "Match your lifestyle with the perfect location - whether you need quick commute access or prefer peaceful suburban living.",
     },
-    { 
+    {
       name: "Custom Roadmap",
-      description: "Get a personalized plan for your home transition, from market timing to financing options and moving logistics."
+      description:
+        "Get a personalized plan for your home transition, from market timing to financing options and moving logistics.",
     },
-    { 
+    {
       name: "Market Advantage",
-      description: "Leverage Nashville's robust job market and affordable cost of living to make a smart, long-term investment in your future."
-    }
+      description:
+        "Leverage Nashville's robust job market and affordable cost of living to make a smart, long-term investment in your future.",
+    },
   ];
 
   const features = [
-    { title: "Local Expertise", description: "Deep knowledge of North Nashville markets" },
-    { title: "Personal Touch", description: "Tailored service for every client" },
-    { title: "Market Insight", description: "Real-time data and trend analysis" }
+    {
+      title: "Local Expertise",
+      description: "Deep knowledge of North Nashville markets",
+    },
+    {
+      title: "Personal Touch",
+      description: "Tailored service for every client",
+    },
+    {
+      title: "Market Insight",
+      description: "Real-time data and trend analysis",
+    },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center">
-        <div 
+        <div
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3')] 
           bg-cover bg-center"
-          style={{ filter: 'brightness(0.7)' }}
+          style={{ filter: "brightness(0.7)" }}
         />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Your Gateway to North Nashville Living
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Discover your perfect home in Nashville's most sought-after northern communities
+            Discover your perfect home in Nashville's most sought-after northern
+            communities
           </p>
           <Dialog>
             <DialogTrigger asChild>
-              <Button 
-                className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6"
-              >
-                Get Your Free Market Report
+              <Button className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6">
+                Get Your Custom Market Report
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl h-[80vh]">
               <iframe
                 src="https://form.jotform.com/250404513574047"
-                style={{ width: '100%', height: '100%', border: 'none' }}
+                style={{ width: "100%", height: "100%", border: "none" }}
                 title="Market Report Form"
               />
             </DialogContent>
@@ -78,15 +92,22 @@ const Index = () => {
             <div className="space-y-6">
               <h2 className="text-4xl font-bold">Meet Your Agent</h2>
               <p className="text-xl text-muted-foreground">
-                Chelsea Bobbitt is your dedicated real estate expert in North Nashville, bringing deep local knowledge and personalized service to every client.
+                Chelsea Bobbitt is your dedicated real estate expert in North
+                Nashville, bringing deep local knowledge and personalized
+                service to every client.
               </p>
               <p className="text-muted-foreground">
-                With extensive experience in the North Nashville market, Chelsea specializes in helping families find their perfect homes in Hendersonville, Gallatin, White House, Green Briar, and Goodlettsville.
+                With extensive experience in the North Nashville market, Chelsea
+                specializes in helping families find their perfect homes in
+                Hendersonville, Gallatin, White House, Green Briar, and
+                Goodlettsville.
               </p>
-              <Button className="bg-primary text-white">Connect with Chelsea</Button>
+              <Button className="bg-primary text-white">
+                Connect with Chelsea
+              </Button>
             </div>
             <div className="relative">
-              <img 
+              <img
                 src="https://storage.googleapis.com/msgsndr/LXrM89iHSYvGb27k35cG/media/67a76467fc76858d0e110fef.png"
                 alt="Chelsea Bobbitt - Lead Real Estate Agent"
                 className="rounded-lg shadow-xl w-full object-cover hover:scale-[1.02] transition-transform duration-300"
@@ -99,13 +120,17 @@ const Index = () => {
       {/* Areas Section */}
       <section className="py-20 px-4 bg-secondary">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-6">Your Path to the Perfect Home</h2>
+          <h2 className="text-4xl font-bold text-center mb-6">
+            Your Path to the Perfect Home
+          </h2>
           <p className="text-xl text-center text-muted-foreground mb-16 max-w-3xl mx-auto">
-            Whether you're prioritizing schools for your children, seeking investment opportunities, or looking for the perfect lifestyle match, we'll help you make the right choice for your family.
+            Whether you're prioritizing schools for your children, seeking
+            investment opportunities, or looking for the perfect lifestyle
+            match, we'll help you make the right choice for your family.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {areas.map((area, index) => (
-              <Card 
+              <Card
                 key={area.name}
                 className="p-6 hover-lift cursor-pointer bg-white"
               >
@@ -117,10 +142,63 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Research Library Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-primary/10 to-primary/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">Research Library</h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Make informed decisions with our comprehensive collection of
+                North Nashville market reports, community insights, and
+                neighborhood guides.
+              </p>
+              <Button
+                size="lg"
+                className="hover:scale-105 transform transition-all duration-200"
+                asChild
+              >
+                <Link to="/research-library">View Research Reports →</Link>
+              </Button>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <Card className="p-6 bg-white/80 backdrop-blur">
+                <h3 className="text-lg font-semibold mb-2">Market Trends</h3>
+                <p className="text-sm text-muted-foreground">
+                  Latest data on property values and market dynamics
+                </p>
+              </Card>
+              <Card className="p-6 bg-white/80 backdrop-blur">
+                <h3 className="text-lg font-semibold mb-2">
+                  Community Insights
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Deep dives into neighborhood development
+                </p>
+              </Card>
+              <Card className="p-6 bg-white/80 backdrop-blur">
+                <h3 className="text-lg font-semibold mb-2">Area Guides</h3>
+                <p className="text-sm text-muted-foreground">
+                  Detailed profiles of North Nashville areas
+                </p>
+              </Card>
+              <Card className="p-6 bg-white/80 backdrop-blur">
+                <h3 className="text-lg font-semibold mb-2">Growth Forecasts</h3>
+                <p className="text-sm text-muted-foreground">
+                  Future projections and opportunities
+                </p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Why Choose Us</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">
+            Why Choose Us
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {features.map((feature) => (
               <div key={feature.title} className="text-center slide-up">
@@ -135,9 +213,12 @@ const Index = () => {
       {/* Contact Section */}
       <section className="py-20 px-4 bg-primary text-white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">Ready to Find Your Dream Home?</h2>
+          <h2 className="text-4xl font-bold mb-8">
+            Ready to Find Your Dream Home?
+          </h2>
           <p className="text-xl mb-12 opacity-90">
-            Let Chelsea guide you through the perfect properties in North Nashville
+            Let Chelsea guide you through the perfect properties in North
+            Nashville
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
             <Input
@@ -147,9 +228,7 @@ const Index = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Button 
-              className="bg-white text-primary hover:bg-gray-100 whitespace-nowrap"
-            >
+            <Button className="bg-white text-primary hover:bg-gray-100 whitespace-nowrap">
               Get Started
             </Button>
           </div>
@@ -161,7 +240,9 @@ const Index = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="font-bold text-lg mb-4">Nashville Nest</h3>
-            <p className="text-muted-foreground">Your trusted partner in North Nashville real estate</p>
+            <p className="text-muted-foreground">
+              Your trusted partner in North Nashville real estate
+            </p>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Areas We Serve</h4>
