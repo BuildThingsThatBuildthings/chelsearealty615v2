@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -51,11 +52,22 @@ const Index = () => {
           <p className="text-xl md:text-2xl mb-8 opacity-90">
             Discover your perfect home in Nashville's most sought-after northern communities
           </p>
-          <Button 
-            className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6"
-          >
-            Explore Properties
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button 
+                className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6"
+              >
+                Get Your Free Market Report
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl h-[80vh]">
+              <iframe
+                src="https://form.jotform.com/250404513574047"
+                style={{ width: '100%', height: '100%', border: 'none' }}
+                title="Market Report Form"
+              />
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
