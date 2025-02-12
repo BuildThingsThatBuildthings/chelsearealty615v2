@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
+import { OnboardingForm } from "@/components/OnboardingForm";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -71,15 +72,11 @@ const Index = () => {
           <Dialog>
             <DialogTrigger asChild>
               <Button className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6">
-                Get Your Custom Market Report
+                Get Your Free Personal Report
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl h-[80vh]">
-              <iframe
-                src="https://form.jotform.com/250404513574047"
-                style={{ width: "100%", height: "100%", border: "none" }}
-                title="Market Report Form"
-              />
+            <DialogContent className="max-w-4xl">
+              <OnboardingForm />
             </DialogContent>
           </Dialog>
         </div>
