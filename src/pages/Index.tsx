@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
-import { OnboardingForm } from "@/components/OnboardingForm";
 import { Instagram } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { ConnectDialog } from "@/components/ConnectDialog";
+import { FloatingConnectButton } from "@/components/FloatingConnectButton";
+import { MovingToolkitDialog } from "@/components/MovingToolkitDialog";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -66,21 +66,17 @@ const Index = () => {
         />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Frustrated by the Chaos of Nashville Real Estate? Let's Bring Clarity to Your Home Search.
+            Frustrated by the Chaos of Nashville Real Estate? Let's Bring
+            Clarity to Your Home Search.
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90">
             Simplify your journey – expert advice that cuts through the clutter.
           </p>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6">
-                Get Your Moving Toolkit
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-4xl">
-              <OnboardingForm />
-            </DialogContent>
-          </Dialog>
+          <MovingToolkitDialog>
+            <Button className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6">
+              Get Your Moving Toolkit
+            </Button>
+          </MovingToolkitDialog>
         </div>
       </section>
 
@@ -95,10 +91,22 @@ const Index = () => {
               </h3>
               <div className="space-y-4">
                 <p className="text-muted-foreground">
-                  As an entrepreneur, mother, and wife, Chelsea knows what it means to balance life's demands while creating a warm, welcoming home. With deep local roots and extensive experience in the North Nashville market, she brings a personal touch to every client interaction—understanding that finding the perfect home is about more than just property; it's about building a lifestyle.
+                  As an entrepreneur, mother, and wife, Chelsea knows what it
+                  means to balance life's demands while creating a warm,
+                  welcoming home. With deep local roots and extensive experience
+                  in the North Nashville market, she brings a personal touch to
+                  every client interaction—understanding that finding the
+                  perfect home is about more than just property; it's about
+                  building a lifestyle.
                 </p>
                 <p className="text-muted-foreground">
-                  Specializing in family-friendly neighborhoods like Hendersonville, Gallatin, White House, Green Briar, and Goodlettsville, Chelsea is passionate about helping you navigate the complexities of real estate with ease and clarity. Whether you're a first-time buyer or seeking an upgrade, she's committed to making your home buying journey seamless and stress-free.
+                  Specializing in family-friendly neighborhoods like
+                  Hendersonville, Gallatin, White House, Green Briar, and
+                  Goodlettsville, Chelsea is passionate about helping you
+                  navigate the complexities of real estate with ease and
+                  clarity. Whether you're a first-time buyer or seeking an
+                  upgrade, she's committed to making your home buying journey
+                  seamless and stress-free.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 pt-4">
@@ -122,54 +130,58 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Areas We Serve</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover your perfect home in these welcoming North Nashville communities, each offering its own unique charm and lifestyle.
+              Discover your perfect home in these welcoming North Nashville
+              communities, each offering its own unique charm and lifestyle.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-semibold mb-3">Hendersonville</h3>
               <p className="text-muted-foreground mb-4">
-                A lakeside community offering a perfect blend of suburban comfort and natural beauty.
+                A lakeside community offering a perfect blend of suburban
+                comfort and natural beauty.
               </p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-semibold mb-3">Gallatin</h3>
               <p className="text-muted-foreground mb-4">
-                A historic town with a modern spirit, featuring great schools and a thriving downtown.
+                A historic town with a modern spirit, featuring great schools
+                and a thriving downtown.
               </p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-semibold mb-3">White House</h3>
               <p className="text-muted-foreground mb-4">
-                A family-friendly community known for its strong sense of community and peaceful living.
+                A family-friendly community known for its strong sense of
+                community and peaceful living.
               </p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-semibold mb-3">Green Briar</h3>
               <p className="text-muted-foreground mb-4">
-                A charming neighborhood that combines rural tranquility with modern conveniences.
+                A charming neighborhood that combines rural tranquility with
+                modern conveniences.
               </p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-semibold mb-3">Goodlettsville</h3>
               <p className="text-muted-foreground mb-4">
-                A vibrant community offering excellent shopping, dining, and easy access to Nashville.
+                A vibrant community offering excellent shopping, dining, and
+                easy access to Nashville.
               </p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group">
-              <h3 className="text-2xl font-semibold mb-3">Ready to Explore?</h3>
+              <h3 className="text-2xl font-semibold mb-3">Surrounding Areas</h3>
               <p className="text-muted-foreground mb-4">
-                Let's find your perfect neighborhood together. Connect with Chelsea to start your journey.
+                We also serve many surrounding communities in the North
+                Nashville area. Ask us about your preferred location.
               </p>
-              <div className="mt-2">
-                <ConnectDialog />
-              </div>
             </div>
           </div>
         </div>
@@ -179,9 +191,12 @@ const Index = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Your Path to the Perfect Home</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              Your Path to the Perfect Home
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A streamlined approach to finding your dream home, backed by expert guidance every step of the way.
+              A streamlined approach to finding your dream home, backed by
+              expert guidance every step of the way.
             </p>
           </div>
 
@@ -192,7 +207,9 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-3">Discovery Call</h3>
               <p className="text-muted-foreground">
-                Let's discuss your needs, preferences, and must-haves for your ideal home. We'll create a personalized plan tailored to your goals.
+                Let's discuss your needs, preferences, and must-haves for your
+                ideal home. We'll create a personalized plan tailored to your
+                goals.
               </p>
             </div>
 
@@ -202,7 +219,8 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-3">Home Search</h3>
               <p className="text-muted-foreground">
-                Access curated listings matching your criteria. We'll schedule viewings and help you evaluate each property's potential.
+                Access curated listings matching your criteria. We'll schedule
+                viewings and help you evaluate each property's potential.
               </p>
             </div>
 
@@ -212,13 +230,10 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-3">Move-In Ready</h3>
               <p className="text-muted-foreground">
-                From offer to closing, we'll handle the details. Get ready to move into your perfect home with confidence and excitement.
+                From offer to closing, we'll handle the details. Get ready to
+                move into your perfect home with confidence and excitement.
               </p>
             </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <ConnectDialog />
           </div>
         </div>
       </section>
@@ -317,6 +332,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <FloatingConnectButton />
     </div>
   );
 };

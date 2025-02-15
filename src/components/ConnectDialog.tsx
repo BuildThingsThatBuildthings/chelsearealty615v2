@@ -9,8 +9,13 @@ import {
 } from "@/components/ui/dialog";
 import { Mail, Phone, MessageSquare } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ReactNode } from "react";
 
-export function ConnectDialog() {
+interface ConnectDialogProps {
+  children?: ReactNode;
+}
+
+export function ConnectDialog({ children }: ConnectDialogProps) {
   const [iframeHeight, setIframeHeight] = useState('700px');
 
   useEffect(() => {
@@ -35,7 +40,6 @@ export function ConnectDialog() {
     window.addEventListener('resize', updateIframeHeight);
 
     return () => {
-      document.body.removeChild(script);
       window.removeEventListener('resize', updateIframeHeight);
     };
   }, []);
@@ -43,9 +47,11 @@ export function ConnectDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-primary text-white">
-          Connect with Chelsea
-        </Button>
+        {children || (
+          <Button className="bg-primary text-white hover:bg-primary/90">
+            Connect with Chelsea
+          </Button>
+        )}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px] w-[95vw] h-[95vh] p-4 sm:p-6 overflow-y-auto">
         <DialogHeader className="mb-4">
