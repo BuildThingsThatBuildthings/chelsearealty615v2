@@ -4,6 +4,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Mail, Phone, MessageSquare } from "lucide-react";
@@ -49,6 +50,9 @@ export function ConnectDialog() {
       <DialogContent className="sm:max-w-[600px] w-[95vw] h-[95vh] p-4 sm:p-6 overflow-y-auto">
         <DialogHeader className="mb-4">
           <DialogTitle className="text-xl sm:text-2xl">Connect with Chelsea</DialogTitle>
+          <DialogDescription>
+            Get in touch or schedule a consultation with Chelsea Bobbitt, REALTOR®
+          </DialogDescription>
         </DialogHeader>
         
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mb-4">
@@ -88,6 +92,7 @@ export function ConnectDialog() {
               }}
               scrolling="yes" 
               id="xXMYBpaGOw2P4crfzJKV_1739644652079"
+              title="Schedule a consultation with Chelsea Bobbitt"
             />
           </div>
         </div>

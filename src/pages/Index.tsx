@@ -116,27 +116,109 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Areas Section */}
-      <section className="py-20 px-4 bg-secondary">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-6">
-            Your Path to the Perfect Home
-          </h2>
-          <p className="text-xl text-center text-muted-foreground mb-16 max-w-3xl mx-auto">
-            Whether you're prioritizing schools for your children, seeking
-            investment opportunities, or looking for the perfect lifestyle
-            match, we'll help you make the right choice for your family.
-          </p>
+      {/* Areas We Serve Section */}
+      <section className="py-20 bg-secondary/5">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Areas We Serve</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Discover your perfect home in these welcoming North Nashville communities, each offering its own unique charm and lifestyle.
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {areas.map((area, index) => (
-              <Card
-                key={area.name}
-                className="p-6 hover-lift cursor-pointer bg-white"
-              >
-                <h3 className="text-2xl font-semibold mb-3">{area.name}</h3>
-                <p className="text-muted-foreground">{area.description}</p>
-              </Card>
-            ))}
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-semibold mb-3">Hendersonville</h3>
+              <p className="text-muted-foreground mb-4">
+                A lakeside community offering a perfect blend of suburban comfort and natural beauty.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-semibold mb-3">Gallatin</h3>
+              <p className="text-muted-foreground mb-4">
+                A historic town with a modern spirit, featuring great schools and a thriving downtown.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-semibold mb-3">White House</h3>
+              <p className="text-muted-foreground mb-4">
+                A family-friendly community known for its strong sense of community and peaceful living.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-semibold mb-3">Green Briar</h3>
+              <p className="text-muted-foreground mb-4">
+                A charming neighborhood that combines rural tranquility with modern conveniences.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-semibold mb-3">Goodlettsville</h3>
+              <p className="text-muted-foreground mb-4">
+                A vibrant community offering excellent shopping, dining, and easy access to Nashville.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group">
+              <h3 className="text-2xl font-semibold mb-3">Ready to Explore?</h3>
+              <p className="text-muted-foreground mb-4">
+                Let's find your perfect neighborhood together. Connect with Chelsea to start your journey.
+              </p>
+              <div className="mt-2">
+                <ConnectDialog />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Path to Perfect Home Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Your Path to the Perfect Home</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              A streamlined approach to finding your dream home, backed by expert guidance every step of the way.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span className="text-primary text-xl font-semibold">1</span>
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">Discovery Call</h3>
+              <p className="text-muted-foreground">
+                Let's discuss your needs, preferences, and must-haves for your ideal home. We'll create a personalized plan tailored to your goals.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span className="text-primary text-xl font-semibold">2</span>
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">Home Search</h3>
+              <p className="text-muted-foreground">
+                Access curated listings matching your criteria. We'll schedule viewings and help you evaluate each property's potential.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span className="text-primary text-xl font-semibold">3</span>
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">Move-In Ready</h3>
+              <p className="text-muted-foreground">
+                From offer to closing, we'll handle the details. Get ready to move into your perfect home with confidence and excitement.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <ConnectDialog />
           </div>
         </div>
       </section>
