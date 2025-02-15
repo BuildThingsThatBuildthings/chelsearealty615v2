@@ -5,6 +5,9 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
 import { OnboardingForm } from "@/components/OnboardingForm";
+import { Instagram } from "lucide-react";
+import { Footer } from "@/components/Footer";
+import { ConnectDialog } from "@/components/ConnectDialog";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -63,16 +66,15 @@ const Index = () => {
         />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Your Gateway to North Nashville Living
+            Frustrated by the Chaos of Nashville Real Estate? Let's Bring Clarity to Your Home Search.
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Discover your perfect home in Nashville's most sought-after northern
-            communities
+            Simplify your journey – expert advice that cuts through the clutter.
           </p>
           <Dialog>
             <DialogTrigger asChild>
               <Button className="bg-white text-primary hover:bg-gray-100 hover:scale-105 transform transition-all duration-200 text-lg px-8 py-6">
-                Get Your Free Personal Report
+                Get Your Moving Toolkit
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl">
@@ -87,21 +89,21 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold">Meet Your Agent</h2>
-              <p className="text-xl text-muted-foreground">
-                Chelsea Bobbitt is your dedicated real estate expert in North
-                Nashville, bringing deep local knowledge and personalized
-                service to every client.
-              </p>
-              <p className="text-muted-foreground">
-                With extensive experience in the North Nashville market, Chelsea
-                specializes in helping families find their perfect homes in
-                Hendersonville, Gallatin, White House, Green Briar, and
-                Goodlettsville.
-              </p>
-              <Button className="bg-primary text-white">
-                Connect with Chelsea
-              </Button>
+              <h2 className="text-4xl font-bold">Meet Chelsea Bobbitt</h2>
+              <h3 className="text-xl text-muted-foreground">
+                Your dedicated North Nashville real estate expert.
+              </h3>
+              <div className="space-y-4">
+                <p className="text-muted-foreground">
+                  As an entrepreneur, mother, and wife, Chelsea knows what it means to balance life's demands while creating a warm, welcoming home. With deep local roots and extensive experience in the North Nashville market, she brings a personal touch to every client interaction—understanding that finding the perfect home is about more than just property; it's about building a lifestyle.
+                </p>
+                <p className="text-muted-foreground">
+                  Specializing in family-friendly neighborhoods like Hendersonville, Gallatin, White House, Green Briar, and Goodlettsville, Chelsea is passionate about helping you navigate the complexities of real estate with ease and clarity. Whether you're a first-time buyer or seeking an upgrade, she's committed to making your home buying journey seamless and stress-free.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <ConnectDialog />
+              </div>
             </div>
             <div className="relative">
               <img
@@ -232,43 +234,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-secondary py-12 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="font-bold text-lg mb-4">Nashville Nest</h3>
-            <p className="text-muted-foreground">
-              Your trusted partner in North Nashville real estate
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4">Areas We Serve</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              {areas.map((area) => (
-                <li key={area.name}>{area.name}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>info@nashvillenest.com</li>
-              <li>(615) 555-0123</li>
-              <li>123 Main Street</li>
-              <li>Nashville, TN 37201</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4">Follow Us</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>Instagram</li>
-              <li>Facebook</li>
-              <li>LinkedIn</li>
-              <li>Twitter</li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

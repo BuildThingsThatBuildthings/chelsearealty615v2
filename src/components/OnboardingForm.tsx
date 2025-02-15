@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { useState, useEffect } from "react"
-import { createInstance } from '@loomhq/record-sdk';
+import { useState, useEffect, useCallback } from "react"
 import { 
   Dialog,
   DialogContent,
@@ -42,42 +41,70 @@ export function OnboardingForm() {
     });
   };
 
-  useEffect(() => {
-    async function initLoom() {
-      const { supported, error: sdkError } = await createInstance({
+  const setupLoom = useCallback(async () => {
+    if (!showRecorder) return;
+    
+    try {
+      const { isSupported } = await import('@loomhq/record-sdk/is-supported');
+      const supportResult = await isSupported();
+
+      if (!supportResult.supported) {
+        setError("Recording not supported in this browser");
+        setIsLoading(false);
+        return;
+      }
+
+      const { createInstance } = await import('@loomhq/record-sdk');
+      const instance = await createInstance({
         publicAppId: LOOM_PUBLIC_APP_ID,
-        insertButtonConfiguration: {
-          hooks: {
-            onStart: () => setIsRecording(true),
-            onStop: () => setIsRecording(false),
-            onComplete: (video) => {
-              setVideoUrl(video.sharedUrl);
-              setShowRecorder(false);
-            },
-            onError: (error) => {
-              setError(error.message);
-              setIsRecording(false);
-            }
+        mode: 'standard'
+      });
+
+      if (!instance) {
+        setError("Failed to initialize Loom");
+        setIsLoading(false);
+        return;
+      }
+
+      const button = document.getElementById("loom-record-sdk-button");
+      if (!button) {
+        setError("Recording button not found");
+        setIsLoading(false);
+        return;
+      }
+
+      await instance.configureButton({
+        element: button,
+        hooks: {
+          onStart: () => setIsRecording(true),
+          onStop: () => setIsRecording(false),
+          onComplete: (video) => {
+            setVideoUrl(video.sharedUrl);
+            setShowRecorder(false);
+            setIsRecording(false);
+          },
+          onError: (error) => {
+            console.error('Loom error:', error);
+            setError(error.message);
+            setIsRecording(false);
           }
         }
       });
 
-      if (!supported) {
-        setError("Recording not supported in this browser");
-      }
-      
-      if (sdkError) {
-        setError(sdkError.message);
-      }
-      
+      setIsLoading(false);
+    } catch (err) {
+      console.error('Loom initialization error:', err);
+      setError(err instanceof Error ? err.message : 'Failed to initialize video recording');
       setIsLoading(false);
     }
+  }, [showRecorder]);
 
-    initLoom();
-  }, []);
+  useEffect(() => {
+    setupLoom();
+  }, [setupLoom]);
 
   return (
-    <form className="space-y-6">
+    <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
       <div>
         <Label htmlFor="name">Name</Label>
         <Input id="name" required />
@@ -151,20 +178,20 @@ export function OnboardingForm() {
       </div>
 
       <Dialog open={showRecorder} onOpenChange={setShowRecorder}>
-        <DialogContent>
+        <DialogContent aria-describedby="recorder-description">
           <DialogHeader>
             <DialogTitle>Record Your Video Message</DialogTitle>
-            <DialogDescription>
+            <DialogDescription id="recorder-description">
               Share a brief video message about what you're looking for in your next home.
             </DialogDescription>
           </DialogHeader>
-          <div id="loom-container" className="min-h-[400px] flex items-center justify-center">
+          <div className="min-h-[400px] flex items-center justify-center">
             {isLoading ? (
               <p>Loading recorder...</p>
             ) : error ? (
               <p className="text-red-500">{error}</p>
             ) : (
-              <div id="loom-record-sdk-button" />
+              <div id="loom-record-sdk-button" className="w-full h-full flex items-center justify-center" />
             )}
           </div>
         </DialogContent>
