@@ -53,40 +53,40 @@ export function ConnectDialog({ children }: ConnectDialogProps) {
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] w-[95vw] h-[95vh] p-4 sm:p-6 overflow-y-auto">
-        <DialogHeader className="mb-4">
-          <DialogTitle className="text-xl sm:text-2xl">Connect with Chelsea</DialogTitle>
-          <DialogDescription>
+      <DialogContent className="sm:max-w-[600px] w-[95vw] max-h-[90vh] p-3 sm:p-6 overflow-y-auto">
+        <DialogHeader className="mb-2 sm:mb-4">
+          <DialogTitle className="text-lg sm:text-2xl">Connect with Chelsea</DialogTitle>
+          <DialogDescription className="text-sm sm:text-base">
             Get in touch or schedule a consultation with Chelsea Bobbitt, REALTOR®
           </DialogDescription>
         </DialogHeader>
         
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mb-4">
+        <div className="grid grid-cols-3 gap-1 sm:gap-4 mb-2 sm:mb-4">
           <a href="tel:615-579-3834" className="w-full">
-            <Button variant="outline" className="w-full text-sm sm:text-base" size="default">
-              <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Call
+            <Button variant="outline" className="w-full h-auto py-2 sm:py-3 text-xs sm:text-base" size="default">
+              <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-5 sm:w-5" />
+              <span className="whitespace-nowrap">Call</span>
             </Button>
           </a>
           
           <a href="sms:615-579-3834" className="w-full">
-            <Button variant="outline" className="w-full text-sm sm:text-base" size="default">
-              <MessageSquare className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Text
+            <Button variant="outline" className="w-full h-auto py-2 sm:py-3 text-xs sm:text-base" size="default">
+              <MessageSquare className="mr-1 sm:mr-2 h-3 w-3 sm:h-5 sm:w-5" />
+              <span className="whitespace-nowrap">Text</span>
             </Button>
           </a>
           
           <a href="mailto:chelsea.realty615@gmail.com" className="w-full">
-            <Button variant="outline" className="w-full text-sm sm:text-base" size="default">
-              <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Email
+            <Button variant="outline" className="w-full h-auto py-2 sm:py-3 text-xs sm:text-base" size="default">
+              <Mail className="mr-1 sm:mr-2 h-3 w-3 sm:h-5 sm:w-5" />
+              <span className="whitespace-nowrap">Email</span>
             </Button>
           </a>
         </div>
 
-        <div className="border-t pt-4">
-          <h3 className="text-base sm:text-lg font-semibold mb-4">Schedule a Consultation</h3>
-          <div className="w-full">
+        <div className="border-t pt-2 sm:pt-4">
+          <h3 className="text-sm sm:text-lg font-semibold mb-2 sm:mb-4">Schedule a Consultation</h3>
+          <div className="w-full -mx-3 sm:mx-0">
             <iframe 
               src="https://api.leadconnectorhq.com/widget/booking/xXMYBpaGOw2P4crfzJKV" 
               style={{ 
