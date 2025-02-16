@@ -76,16 +76,14 @@ export function OnboardingForm() {
       await instance.configureButton({
         element: button,
         hooks: {
-          onStart: () => setIsRecording(true),
-          onStop: () => setIsRecording(false),
-          onComplete: (video) => {
+          onRecordingStarted: () => setIsRecording(true),
+          onRecordingComplete: (video: { sharedUrl: string }) => {
             setVideoUrl(video.sharedUrl);
             setShowRecorder(false);
             setIsRecording(false);
           },
-          onError: (error) => {
-            console.error('Loom error:', error);
-            setError(error.message);
+          onUploadComplete: () => {
+            setShowRecorder(false);
             setIsRecording(false);
           }
         }
