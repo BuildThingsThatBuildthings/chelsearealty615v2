@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const EmailCaptureForm = () => {
+  const [iframeHeight, setIframeHeight] = useState('430px');
+
   useEffect(() => {
     // Load the external script
     const script = document.createElement('script');
@@ -8,9 +10,23 @@ export const EmailCaptureForm = () => {
     script.async = true;
     document.body.appendChild(script);
 
+    // Function to update iframe height based on screen size
+    const updateHeight = () => {
+      const width = window.innerWidth;
+      if (width < 640) { // mobile
+        setIframeHeight('350px');
+      } else {
+        setIframeHeight('430px');
+      }
+    };
+
+    // Initial call and event listener
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+
     return () => {
-      // Cleanup when component unmounts
       document.body.removeChild(script);
+      window.removeEventListener('resize', updateHeight);
     };
   }, []);
 
@@ -19,9 +35,11 @@ export const EmailCaptureForm = () => {
       src="https://api.leadconnectorhq.com/widget/form/yHaFyFx7DgjivU4hd1dL"
       style={{
         width: '100%',
-        height: '430px',
+        height: iframeHeight,
         border: 'none',
-        borderRadius: '0px'
+        borderRadius: '0px',
+        overflow: 'hidden',
+        transition: 'height 0.3s ease-in-out'
       }}
       id="inline-yHaFyFx7DgjivU4hd1dL"
       data-layout="{'id':'INLINE'}"
@@ -32,7 +50,7 @@ export const EmailCaptureForm = () => {
       data-deactivation-type="neverDeactivate"
       data-deactivation-value=""
       data-form-name="Email Capture"
-      data-height="430"
+      data-height={iframeHeight}
       data-layout-iframe-id="inline-yHaFyFx7DgjivU4hd1dL"
       data-form-id="yHaFyFx7DgjivU4hd1dL"
       title="Email Capture"
