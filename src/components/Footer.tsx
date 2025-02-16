@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
@@ -40,15 +40,24 @@ export function Footer() {
                 <Mail className="h-4 w-4 mr-2" />
                 <span>chelsea.realty615@gmail.com</span>
               </a>
-              <a 
-                href="https://www.instagram.com/chelsea.realty615/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Instagram className="h-4 w-4 mr-2" />
-                <span>@chelsea.realty615</span>
-              </a>
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://www.instagram.com/chelsea.realty615"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://www.facebook.com/ChelseaLeigh91"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Facebook className="h-6 w-6" />
+                </a>
+              </div>
             </div>
           </div>
           <div className="md:text-right">

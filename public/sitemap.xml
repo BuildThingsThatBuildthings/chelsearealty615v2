@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://nashvillenest.com/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Research Library -->
+  <url>
+    <loc>https://nashvillenest.com/research-library</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Area Reports -->
+  <url>
+    <loc>https://nashvillenest.com/reports/hendersonville</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nashvillenest.com/reports/gallatin</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nashvillenest.com/reports/white-house</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

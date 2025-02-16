@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow email templates
+Disallow: /email-templates/
+Disallow: /src/email-templates/
+Disallow: /src/email-templates/email_onboard_sequence/
+
+# Sitemap
+Sitemap: https://nashvillenest.com/sitemap.xml
