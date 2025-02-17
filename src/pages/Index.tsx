@@ -44,7 +44,7 @@ const Index = () => {
   const features = [
     {
       title: "Local Expertise",
-      description: "Deep knowledge of North Nashville markets",
+      description: "Deep knowledge of Middle Tennessee markets",
     },
     {
       title: "Personal Touch",
@@ -88,14 +88,14 @@ const Index = () => {
             <div className="space-y-6">
               <h2 className="text-4xl font-bold">Meet Chelsea Bobbitt</h2>
               <h3 className="text-xl text-muted-foreground">
-                Your dedicated North Nashville real estate expert.
+                Your dedicated Middle Tennessee real estate expert.
               </h3>
               <div className="space-y-4">
                 <p className="text-muted-foreground">
                   As an entrepreneur, mother, and wife, Chelsea knows what it
                   means to balance life's demands while creating a warm,
                   welcoming home. With deep local roots and extensive experience
-                  in the North Nashville market, she brings a personal touch to
+                  in the Middle Tennessee market, she brings a personal touch to
                   every client interaction—understanding that finding the
                   perfect home is about more than just property; it's about
                   building a lifestyle.
@@ -219,7 +219,7 @@ const Index = () => {
               <h2 className="text-4xl font-bold mb-6">Research Library</h2>
               <p className="text-xl text-muted-foreground mb-8">
                 Make informed decisions with our comprehensive collection of
-                North Nashville market reports, community insights, and
+                Middle Tennessee market reports, community insights, and
                 neighborhood guides.
               </p>
               <Button
@@ -268,7 +268,9 @@ const Index = () => {
       <section className="py-20 bg-secondary/5">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Serving Middle Tennessee</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              Serving Middle Tennessee
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Discover your perfect home in Middle Tennessee's thriving communities. Expert real estate services in
               Hendersonville, Gallatin, White House, Portland, and
@@ -319,8 +321,8 @@ const Index = () => {
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group">
               <h3 className="text-2xl font-semibold mb-3">Surrounding Areas</h3>
               <p className="text-muted-foreground mb-4">
-                We also serve many surrounding communities in the North
-                Nashville area. Ask us about your preferred location.
+                We also serve many surrounding communities in the Middle
+                Tennessee area. Ask us about your preferred location.
               </p>
             </div>
           </div>
@@ -402,8 +404,8 @@ const Index = () => {
             Ready to Find Your Dream Home?
           </h2>
           <p className="text-xl mb-12 opacity-90">
-            Let Chelsea guide you through the perfect properties in North
-            Nashville
+            Let Chelsea guide you through the perfect properties in Middle
+            Tennessee
           </p>
           <div className="bg-white p-8 rounded-lg">
             <EmailCaptureForm />
