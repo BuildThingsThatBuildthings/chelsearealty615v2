@@ -50,7 +50,7 @@ export function Footer() {
                   <Instagram className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://www.facebook.com/ChelseaLeigh91"
+                  href="https://www.facebook.com/profile.php?id=61565124897810"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
