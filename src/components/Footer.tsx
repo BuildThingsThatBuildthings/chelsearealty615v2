@@ -67,6 +67,14 @@ export function Footer() {
             <p className="text-sm text-muted-foreground mt-2">
               Each EXIT Office is Independently Owned and Operated
             </p>
+            <a 
+              href="https://www.buildthingsthatbuildthings.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-muted-foreground/75 hover:text-primary transition-colors mt-2 inline-block"
+            >
+              Marketing Engineered by Build Things That Build Things
+            </a>
           </div>
         </div>
       </div>
