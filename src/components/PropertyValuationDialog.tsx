@@ -20,7 +20,7 @@ export function PropertyValuationDialog({
 }) {
   const isMobile = useIsMobile();
   const [submitted, setSubmitted] = useState(false);
-  const [iframeHeight, setIframeHeight] = useState(isMobile ? 800 : 750);
+  const [iframeHeight, setIframeHeight] = useState(isMobile ? 900 : 850);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // Load the form embed script
@@ -32,7 +32,7 @@ export function PropertyValuationDialog({
 
     // Adjust iframe height based on window resize
     const handleResize = () => {
-      setIframeHeight(window.innerWidth < 640 ? 800 : 750);
+      setIframeHeight(window.innerWidth < 640 ? 900 : 850);
     };
 
     window.addEventListener('resize', handleResize);
@@ -43,6 +43,15 @@ export function PropertyValuationDialog({
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  // Note for the user: 
+  // To redirect to a custom success page after form submission,
+  // you can use the following URL in your form settings:
+  // https://chelsearealty615.com/form-success
+  // 
+  // You'll need to create a route for /form-success in your app
+  // that displays the success message similar to what's in the 
+  // "submitted" state of this component.
 
   return (
     <Dialog>
