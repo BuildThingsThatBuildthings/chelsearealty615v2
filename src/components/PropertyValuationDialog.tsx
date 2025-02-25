@@ -50,7 +50,7 @@ export function PropertyValuationDialog({
       <DialogContent 
         className={`${isMobile ? "w-[95%] p-4 max-h-[90vh] overflow-y-auto" : "sm:max-w-[500px]"}`}
       >
-        <DialogHeader className={isMobile ? "space-y-2" : "space-y-3"}>
+        <DialogHeader className={isMobile ? "space-y-1" : "space-y-2"}>
           <DialogTitle className={isMobile ? "text-xl" : "text-2xl"}>Request Free Property Valuation</DialogTitle>
           <DialogDescription className={isMobile ? "text-sm" : "text-base"}>
             Get a Comparative Market Analysis (CMA) to understand your property's value in today's market.
@@ -58,7 +58,7 @@ export function PropertyValuationDialog({
         </DialogHeader>
         
         {!submitted ? (
-          <div className={`py-2 ${isMobile ? "px-0" : "px-2"}`}>
+          <div className={`pt-0 pb-2 -mt-1 ${isMobile ? "px-0" : "px-2"}`}>
             <iframe
               ref={iframeRef}
               src="https://api.leadconnectorhq.com/widget/form/T0gJ3mTmefXcstgCHes3"
