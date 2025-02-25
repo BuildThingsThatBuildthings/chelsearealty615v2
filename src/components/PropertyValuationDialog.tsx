@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +20,8 @@ export function PropertyValuationDialog({
 }) {
   const isMobile = useIsMobile();
   const [submitted, setSubmitted] = useState(false);
+  const [iframeHeight, setIframeHeight] = useState(isMobile ? 750 : 700);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // Load the form embed script
   useEffect(() => {
@@ -28,29 +30,41 @@ export function PropertyValuationDialog({
     script.async = true;
     document.body.appendChild(script);
 
+    // Adjust iframe height based on window resize
+    const handleResize = () => {
+      setIframeHeight(window.innerWidth < 640 ? 750 : 700);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial height
+
     return () => {
       document.body.removeChild(script);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className={isMobile ? "w-[95%] p-4" : "sm:max-w-[500px]"}>
-        <DialogHeader>
-          <DialogTitle>Request Free Property Valuation</DialogTitle>
-          <DialogDescription>
+      <DialogContent 
+        className={`${isMobile ? "w-[95%] p-4 max-h-[90vh] overflow-y-auto" : "sm:max-w-[500px]"}`}
+      >
+        <DialogHeader className={isMobile ? "space-y-2" : "space-y-3"}>
+          <DialogTitle className={isMobile ? "text-xl" : "text-2xl"}>Request Free Property Valuation</DialogTitle>
+          <DialogDescription className={isMobile ? "text-sm" : "text-base"}>
             Get a Comparative Market Analysis (CMA) to understand your property's value in today's market.
           </DialogDescription>
         </DialogHeader>
         
         {!submitted ? (
-          <div className="py-4">
+          <div className={`py-2 ${isMobile ? "px-0" : "px-2"}`}>
             <iframe
+              ref={iframeRef}
               src="https://api.leadconnectorhq.com/widget/form/T0gJ3mTmefXcstgCHes3"
               style={{
                 width: "100%",
-                height: isMobile ? "838px" : "838px",
+                height: `${iframeHeight}px`,
                 border: "none",
                 borderRadius: "3px"
               }}
@@ -63,7 +77,7 @@ export function PropertyValuationDialog({
               data-deactivation-type="neverDeactivate"
               data-deactivation-value=""
               data-form-name="CMA Request"
-              data-height="838"
+              data-height={iframeHeight}
               data-layout-iframe-id="inline-T0gJ3mTmefXcstgCHes3"
               data-form-id="T0gJ3mTmefXcstgCHes3"
               title="CMA Request"
