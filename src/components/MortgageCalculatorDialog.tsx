@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -62,10 +63,12 @@ export function MortgageCalculatorDialog({
     }
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className={isMobile ? "w-[95%] p-4" : "sm:max-w-[425px]"}>
         <DialogHeader>
           <DialogTitle>Mortgage Payment Calculator</DialogTitle>
           <DialogDescription>
@@ -73,8 +76,8 @@ export function MortgageCalculatorDialog({
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="loanAmount" className="text-right">
+          <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-center gap-4"}>
+            <Label htmlFor="loanAmount" className={isMobile ? "" : "text-right"}>
               Loan Amount
             </Label>
             <Input
@@ -82,13 +85,13 @@ export function MortgageCalculatorDialog({
               type="number"
               value={loanAmount}
               onChange={(e) => handleInputChange(setLoanAmount, e.target.value)}
-              className="col-span-3"
+              className={isMobile ? "w-full" : "col-span-3"}
             />
           </div>
           
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label className="text-right">Down Payment</Label>
-            <div className="col-span-3 space-y-2">
+          <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-center gap-4"}>
+            <Label className={isMobile ? "" : "text-right"}>Down Payment</Label>
+            <div className={isMobile ? "space-y-2" : "col-span-3 space-y-2"}>
               <RadioGroup 
                 value={downPaymentType} 
                 onValueChange={(value) => setDownPaymentType(value as "amount" | "percentage")}
@@ -116,11 +119,11 @@ export function MortgageCalculatorDialog({
             </div>
           </div>
           
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="interestRate" className="text-right">
+          <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-center gap-4"}>
+            <Label htmlFor="interestRate" className={isMobile ? "" : "text-right"}>
               Interest Rate
             </Label>
-            <div className="col-span-3 flex items-center">
+            <div className={isMobile ? "flex items-center" : "col-span-3 flex items-center"}>
               <Input
                 id="interestRate"
                 type="number"
@@ -132,11 +135,11 @@ export function MortgageCalculatorDialog({
             </div>
           </div>
           
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="loanTerm" className="text-right">
+          <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-center gap-4"}>
+            <Label htmlFor="loanTerm" className={isMobile ? "" : "text-right"}>
               Loan Term
             </Label>
-            <div className="col-span-3 flex items-center">
+            <div className={isMobile ? "flex items-center" : "col-span-3 flex items-center"}>
               <Input
                 id="loanTerm"
                 type="number"
@@ -147,12 +150,16 @@ export function MortgageCalculatorDialog({
             </div>
           </div>
           
-          <Button onClick={calculateMortgage} className="mt-2">
-            Calculate
-          </Button>
+          <div className={isMobile ? "mt-8 mb-16 pb-8" : "mt-2"}>
+            <Button onClick={calculateMortgage} className={isMobile ? "w-full py-6 text-lg" : ""}>
+              Calculate
+            </Button>
+          </div>
+          
+          <div className={isMobile ? "h-4" : ""}></div>
           
           {monthlyPayment !== null && (
-            <div className="mt-4 p-4 bg-secondary/20 rounded-md">
+            <div className={`mt-4 p-4 bg-secondary/20 rounded-md ${isMobile ? "text-center" : ""}`}>
               <h3 className="font-semibold text-lg mb-2">Monthly Payment</h3>
               <p className="text-2xl font-bold">${monthlyPayment.toFixed(2)}</p>
               <p className="text-sm text-muted-foreground mt-2">
