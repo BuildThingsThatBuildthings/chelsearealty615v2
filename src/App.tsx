@@ -9,6 +9,7 @@ import ResearchLibrary from "./pages/ResearchLibrary";
 import Hendersonville from "./pages/reports/Hendersonville";
 import Gallatin from "./pages/reports/Gallatin";
 import WhiteHouse from "./pages/reports/WhiteHouse";
+import NashvilleMarket from "./pages/reports/NashvilleMarket";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import FormSuccess from "./pages/FormSuccess";
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/research-library" element={<ResearchLibrary />} />
+          <Route path="/research-library/nashville-market" element={<NashvilleMarket />} />
           <Route path="/research-library/hendersonville" element={<Hendersonville />} />
           <Route path="/research-library/gallatin" element={<Gallatin />} />
           <Route path="/research-library/white-house" element={<WhiteHouse />} />

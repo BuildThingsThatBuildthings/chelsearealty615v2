@@ -5,6 +5,13 @@ import { Link } from "react-router-dom"
 
 const reports = [
   {
+    id: "nashville-market",
+    title: "Nashville's Real Estate Remix: Record Prices Meet Changing Tempo",
+    description: "Analyzing the shift from frenzy to balance while prices continue to climb in Nashville's resilient real estate market.",
+    date: "February 2025",
+    city: "Nashville"
+  },
+  {
     id: "white-house",
     title: "Discover White House, TN: Your Family's Ideal Hometown",
     description: "Explore excellent schools, safe neighborhoods, and family-friendly activities in this growing Tennessee town.",
