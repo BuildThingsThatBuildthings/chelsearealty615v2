@@ -134,7 +134,7 @@ export default function NashvilleMarket() {
           {/* Full Report Link */}
           <div className="mt-12 text-center">
             <Button asChild size="lg">
-              <a href="https://docs.google.com/document/d/1nashville-market-report/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <a href="https://docs.google.com/document/d/12xubuspWfZNIWe7RvYSS3SngyJ51SleaiihvUSFVdJY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                 View Full Report on Google Docs →
               </a>
             </Button>
