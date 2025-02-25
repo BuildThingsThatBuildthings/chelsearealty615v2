@@ -20,7 +20,7 @@ export function PropertyValuationDialog({
 }) {
   const isMobile = useIsMobile();
   const [submitted, setSubmitted] = useState(false);
-  const [iframeHeight, setIframeHeight] = useState(isMobile ? 750 : 700);
+  const [iframeHeight, setIframeHeight] = useState(isMobile ? 800 : 750);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // Load the form embed script
@@ -32,7 +32,7 @@ export function PropertyValuationDialog({
 
     // Adjust iframe height based on window resize
     const handleResize = () => {
-      setIframeHeight(window.innerWidth < 640 ? 750 : 700);
+      setIframeHeight(window.innerWidth < 640 ? 800 : 750);
     };
 
     window.addEventListener('resize', handleResize);
@@ -48,7 +48,7 @@ export function PropertyValuationDialog({
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent 
-        className={`${isMobile ? "w-[95%] p-4 max-h-[90vh] overflow-y-auto" : "sm:max-w-[500px]"}`}
+        className={`${isMobile ? "w-[95%] p-4 max-h-[95vh] overflow-y-auto" : "sm:max-w-[500px] max-h-[95vh] overflow-y-auto"}`}
       >
         <DialogHeader className={isMobile ? "space-y-1" : "space-y-2"}>
           <DialogTitle className={isMobile ? "text-xl" : "text-2xl"}>Request Free Property Valuation</DialogTitle>
