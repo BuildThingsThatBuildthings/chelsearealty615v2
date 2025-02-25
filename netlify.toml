@@ -1,11 +1,3 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "18"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# This file was previously used for Netlify configuration
+# Since Netlify has been removed, this file is no longer needed
+# and can be deleted when file system permissions allow.

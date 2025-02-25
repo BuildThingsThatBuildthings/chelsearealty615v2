@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,19 +18,20 @@ export function PropertyValuationDialog({
 }: {
   children: React.ReactNode;
 }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [additionalInfo, setAdditionalInfo] = useState("");
+  const isMobile = useIsMobile();
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = () => {
-    // In a real application, this would send the data to a server
-    // For now, we'll just show a success message
-    setSubmitted(true);
-  };
+  // Load the form embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-  const isMobile = useIsMobile();
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <Dialog>
@@ -44,68 +45,29 @@ export function PropertyValuationDialog({
         </DialogHeader>
         
         {!submitted ? (
-          <div className="grid gap-4 py-4">
-            <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-center gap-4"}>
-              <Label htmlFor="name" className={isMobile ? "" : "text-right"}>
-                Full Name
-              </Label>
-              <Input
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className={isMobile ? "w-full" : "col-span-3"}
-                placeholder="Your full name"
-              />
-            </div>
-            
-            <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-center gap-4"}>
-              <Label htmlFor="email" className={isMobile ? "" : "text-right"}>
-                Email
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={isMobile ? "w-full" : "col-span-3"}
-                placeholder="Your email address"
-              />
-            </div>
-            
-            <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-center gap-4"}>
-              <Label htmlFor="address" className={isMobile ? "" : "text-right"}>
-                Property Address
-              </Label>
-              <Input
-                id="address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                className={isMobile ? "w-full" : "col-span-3"}
-                placeholder="Full property address"
-              />
-            </div>
-            
-            <div className={isMobile ? "grid gap-2" : "grid grid-cols-4 items-start gap-4"}>
-              <Label htmlFor="additionalInfo" className={isMobile ? "" : "text-right"}>
-                Additional Info
-              </Label>
-              <Textarea
-                id="additionalInfo"
-                value={additionalInfo}
-                onChange={(e) => setAdditionalInfo(e.target.value)}
-                className={isMobile ? "w-full" : "col-span-3"}
-                placeholder="Recent upgrades, special features, etc."
-                rows={3}
-              />
-            </div>
-            
-            <div className={isMobile ? "mt-8 mb-16 pb-8" : "mt-2"}>
-              <Button onClick={handleSubmit} className={isMobile ? "w-full py-6 text-lg" : ""}>
-                Submit Request
-              </Button>
-            </div>
-            
-            <div className={isMobile ? "h-4" : ""}></div>
+          <div className="py-4">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/T0gJ3mTmefXcstgCHes3"
+              style={{
+                width: "100%",
+                height: isMobile ? "838px" : "838px",
+                border: "none",
+                borderRadius: "3px"
+              }}
+              id="inline-T0gJ3mTmefXcstgCHes3" 
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="CMA Request"
+              data-height="838"
+              data-layout-iframe-id="inline-T0gJ3mTmefXcstgCHes3"
+              data-form-id="T0gJ3mTmefXcstgCHes3"
+              title="CMA Request"
+            />
           </div>
         ) : (
           <div className={`py-6 text-center ${isMobile ? "px-2" : ""}`}>

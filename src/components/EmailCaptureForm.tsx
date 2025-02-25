@@ -32,16 +32,16 @@ export const EmailCaptureForm = () => {
 
   return (
     <iframe
-      src="https://api.leadconnectorhq.com/widget/form/yHaFyFx7DgjivU4hd1dL"
+      src="https://api.leadconnectorhq.com/widget/form/T0gJ3mTmefXcstgCHes3"
       style={{
         width: '100%',
         height: iframeHeight,
         border: 'none',
-        borderRadius: '0px',
+        borderRadius: '3px',
         overflow: 'hidden',
         transition: 'height 0.3s ease-in-out'
       }}
-      id="inline-yHaFyFx7DgjivU4hd1dL"
+      id="inline-T0gJ3mTmefXcstgCHes3" 
       data-layout="{'id':'INLINE'}"
       data-trigger-type="alwaysShow"
       data-trigger-value=""
@@ -49,11 +49,11 @@ export const EmailCaptureForm = () => {
       data-activation-value=""
       data-deactivation-type="neverDeactivate"
       data-deactivation-value=""
-      data-form-name="Email Capture"
+      data-form-name="CMA Request"
       data-height={iframeHeight}
-      data-layout-iframe-id="inline-yHaFyFx7DgjivU4hd1dL"
-      data-form-id="yHaFyFx7DgjivU4hd1dL"
-      title="Email Capture"
+      data-layout-iframe-id="inline-T0gJ3mTmefXcstgCHes3"
+      data-form-id="T0gJ3mTmefXcstgCHes3"
+      title="CMA Request"
     />
   );
 };

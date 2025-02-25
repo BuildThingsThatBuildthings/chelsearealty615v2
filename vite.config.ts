@@ -8,5 +8,15 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     }
+  },
+  // This configuration handles SPA redirects that were previously managed by Netlify
+  server: {
+    historyApiFallback: true,
+  },
+  build: {
+    outDir: "dist",
+  },
+  css: {
+    postcss: './postcss.config.js',
   }
 });

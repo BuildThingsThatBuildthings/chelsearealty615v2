@@ -1,1 +1,13 @@
-/* /index.html 200
+# This file was previously used for Netlify redirects
+# Since Netlify has been removed, this functionality should be
+# implemented in your web server configuration instead.
+#
+# For example, with Express:
+# app.get('*', (req, res) => {
+#   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+# });
+#
+# Or with nginx:
+# location / {
+#   try_files $uri $uri/ /index.html;
+# }
