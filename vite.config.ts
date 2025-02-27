@@ -43,41 +43,32 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Core React libraries
-          if (id.includes('node_modules/react') || 
-              id.includes('node_modules/react-dom') || 
-              id.includes('node_modules/scheduler')) {
-            return 'react-core';
-          }
-          
-          // React Router
-          if (id.includes('node_modules/react-router') || 
-              id.includes('node_modules/react-router-dom') ||
-              id.includes('node_modules/@remix-run')) {
-            return 'router';
-          }
-          
-          // UI Components from Radix
-          if (id.includes('node_modules/@radix-ui')) {
-            return 'ui-components';
-          }
-          
-          // Form handling
-          if (id.includes('node_modules/react-hook-form') || 
-              id.includes('node_modules/@hookform')) {
-            return 'forms';
-          }
-          
-          // Icons
-          if (id.includes('node_modules/lucide-react')) {
-            return 'icons';
-          }
-          
-          // Other third-party dependencies
-          if (id.includes('node_modules/')) {
-            return 'vendor';
-          }
+        manualChunks: {
+          'react-core': [
+            'react', 
+            'react-dom', 
+            'scheduler',
+            'react/jsx-runtime'
+          ],
+          'router': [
+            'react-router', 
+            'react-router-dom',
+            '@remix-run/router'
+          ],
+          'ui-components': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-toast',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-slot'
+          ],
+          'forms': [
+            'react-hook-form',
+            '@hookform/resolvers'
+          ],
+          'icons': [
+            'lucide-react'
+          ]
         },
         // Optimize chunk size and reduce requests
         chunkFileNames: 'assets/[name]-[hash].js',
