@@ -1,16 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { Instagram } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { ConnectDialog } from "@/components/ConnectDialog";
 import { FloatingConnectButton } from "@/components/FloatingConnectButton";
-import { MovingToolkitDialog } from "@/components/MovingToolkitDialog";
-import { MortgageCalculatorDialog } from "@/components/MortgageCalculatorDialog";
-import { PropertyValuationDialog } from "@/components/PropertyValuationDialog";
-import { EmailCaptureForm } from "@/components/EmailCaptureForm";
+
+// Lazy load non-critical components
+const MovingToolkitDialog = lazy(() => import("@/components/MovingToolkitDialog").then(module => ({ default: module.MovingToolkitDialog })));
+const MortgageCalculatorDialog = lazy(() => import("@/components/MortgageCalculatorDialog").then(module => ({ default: module.MortgageCalculatorDialog })));
+const PropertyValuationDialog = lazy(() => import("@/components/PropertyValuationDialog").then(module => ({ default: module.PropertyValuationDialog })));
+const EmailCaptureForm = lazy(() => import("@/components/EmailCaptureForm").then(module => ({ default: module.EmailCaptureForm })));
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -63,9 +65,11 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center">
         <div
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3')] 
-          bg-cover bg-center"
-          style={{ filter: "brightness(0.7)" }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')",
+            filter: "brightness(0.7)" 
+          }}
         />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -121,6 +125,9 @@ const Index = () => {
                 src="https://storage.googleapis.com/msgsndr/LXrM89iHSYvGb27k35cG/media/67a76467fc76858d0e110fef.png"
                 alt="Chelsea Bobbitt - Lead Real Estate Agent"
                 className="rounded-lg shadow-xl w-full object-cover hover:scale-[1.02] transition-transform duration-300"
+                loading="lazy"
+                width="500"
+                height="600"
               />
             </div>
           </div>

@@ -1,59 +1,48 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from "react";
+
+// Lazy load the iframe component
+const EmailCaptureIframe = lazy(() => 
+  import('./EmailCaptureIframe').then(module => ({
+    default: module.EmailCaptureIframe
+  }))
+);
 
 export const EmailCaptureForm = () => {
-  const [iframeHeight, setIframeHeight] = useState('430px');
-
+  const [isFormLoaded, setIsFormLoaded] = useState(false);
+  
   useEffect(() => {
-    // Load the external script
-    const script = document.createElement('script');
-    script.src = 'https://link.msgsndr.com/js/form_embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Function to update iframe height based on screen size
-    const updateHeight = () => {
-      const width = window.innerWidth;
-      if (width < 640) { // mobile
-        setIframeHeight('350px');
-      } else {
-        setIframeHeight('430px');
-      }
-    };
-
-    // Initial call and event listener
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-
-    return () => {
-      document.body.removeChild(script);
-      window.removeEventListener('resize', updateHeight);
-    };
+    // Delay loading the form until after initial page render
+    const timer = setTimeout(() => {
+      setIsFormLoaded(true);
+    }, 1000);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <iframe
-      src="https://api.leadconnectorhq.com/widget/form/yHaFyFx7DgjivU4hd1dL"
-      style={{
-        width: '100%',
-        height: iframeHeight,
-        border: 'none',
-        borderRadius: '0px',
-        overflow: 'hidden',
-        transition: 'height 0.3s ease-in-out'
-      }}
-      id="inline-yHaFyFx7DgjivU4hd1dL" 
-      data-layout="{'id':'INLINE'}"
-      data-trigger-type="alwaysShow"
-      data-trigger-value=""
-      data-activation-type="alwaysActivated"
-      data-activation-value=""
-      data-deactivation-type="neverDeactivate"
-      data-deactivation-value=""
-      data-form-name="Email Capture"
-      data-height={iframeHeight}
-      data-layout-iframe-id="inline-yHaFyFx7DgjivU4hd1dL"
-      data-form-id="yHaFyFx7DgjivU4hd1dL"
-      title="Email Capture"
-    />
+    <div className="email-capture-container">
+      {isFormLoaded ? (
+        <Suspense fallback={
+          <div className="flex items-center justify-center p-8 bg-gray-50 rounded-md" style={{ height: "430px" }}>
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Loading form...</p>
+            </div>
+          </div>
+        }>
+          <EmailCaptureIframe />
+        </Suspense>
+      ) : (
+        <div className="flex items-center justify-center p-8 bg-gray-50 rounded-md" style={{ height: "430px" }}>
+          <div className="text-center">
+            <h3 className="text-lg font-medium mb-2">Get in Touch</h3>
+            <p className="text-muted-foreground mb-4">Loading contact form...</p>
+            <div className="animate-pulse flex space-x-4 justify-center">
+              <div className="h-3 w-24 bg-gray-200 rounded"></div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
