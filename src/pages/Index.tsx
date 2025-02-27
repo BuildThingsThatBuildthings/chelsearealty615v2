@@ -65,7 +65,7 @@ const Index = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')",
+            backgroundImage: "url('/assets/hero-background.webp')",
             filter: "brightness(0.7)" 
           }}
         />
@@ -119,14 +119,20 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <img
-                src="https://storage.googleapis.com/msgsndr/LXrM89iHSYvGb27k35cG/media/67a76467fc76858d0e110fef.png"
-                alt="Chelsea Bobbitt - Lead Real Estate Agent"
-                className="rounded-lg shadow-xl w-full object-cover hover:scale-[1.02] transition-transform duration-300"
-                loading="lazy"
-                width="500"
-                height="600"
-              />
+              <picture>
+                <source
+                  srcSet="/assets/chelsea-bobbitt.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/assets/chelsea-bobbitt.jpg"
+                  alt="Chelsea Bobbitt - Lead Real Estate Agent"
+                  className="rounded-lg shadow-xl w-full object-cover hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                  width="500"
+                  height="600"
+                />
+              </picture>
             </div>
           </div>
         </div>
