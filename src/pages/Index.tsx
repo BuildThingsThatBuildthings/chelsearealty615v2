@@ -61,14 +61,17 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url('/assets/hero-background.webp')",
-            filter: "brightness(0.7)" 
-          }}
-        />
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/assets/hero-background.webp"
+            alt="Nashville Real Estate Hero"
+            className="w-full h-full object-cover"
+            style={{ filter: "brightness(0.7)" }}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </div>
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Frustrated by the Chaos of Nashville Real Estate? Let's Bring
