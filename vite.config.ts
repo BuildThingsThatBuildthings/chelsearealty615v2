@@ -17,20 +17,27 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     }
   },
-  // This configuration handles SPA redirects that were previously managed by Netlify
-  server: {
-    historyApiFallback: true,
+  // This configuration handles SPA redirects
+  preview: {
+    port: 4173,
   },
   build: {
     outDir: "dist",
     minify: 'terser',
     sourcemap: false, // Disable sourcemaps in production for better performance
+    target: 'es2020', // Target modern browsers
+    modulePreload: {
+      polyfill: false, // Disable modulepreload polyfill
+    },
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace'],
-        passes: 2, // Multiple passes for better optimization
+        passes: 3, // More aggressive optimization
+        ecma: 2020, // Use modern JS features for better compression
+        unused: true, // Remove unused variables
+        dead_code: true, // Remove dead code
       },
       mangle: {
         safari10: true,
