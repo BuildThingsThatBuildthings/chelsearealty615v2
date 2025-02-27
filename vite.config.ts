@@ -40,50 +40,43 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Create a chunk for each page
-          if (id.includes('/src/pages/')) {
-            const pageName = id.split('/pages/')[1].split('.')[0].toLowerCase();
-            return `page-${pageName}`;
-          }
-          
-          // Create a chunk for React and related packages
-          if (id.includes('node_modules/react') || 
-              id.includes('node_modules/react-dom') || 
-              id.includes('node_modules/scheduler')) {
-            return 'react-vendor';
-          }
-          
-          // Create a chunk for React Router
-          if (id.includes('node_modules/react-router') || 
-              id.includes('node_modules/react-router-dom') ||
-              id.includes('node_modules/@remix-run')) {
-            return 'router-vendor';
-          }
-          
-          // Create a chunk for UI components
-          if (id.includes('node_modules/@radix-ui')) {
-            return 'ui-vendor';
-          }
-          
-          // Create a chunk for utility libraries
-          if (id.includes('node_modules/lucide-react') || 
-              id.includes('node_modules/clsx') ||
-              id.includes('node_modules/tailwind-merge')) {
-            return 'utils-vendor';
-          }
-          
-          // Create a chunk for form-related libraries
-          if (id.includes('node_modules/react-hook-form') || 
-              id.includes('node_modules/@hookform') ||
-              id.includes('node_modules/zod')) {
-            return 'form-vendor';
-          }
-          
-          // Create a chunk for all other node_modules
-          if (id.includes('node_modules')) {
-            return 'vendors';
-          }
+        manualChunks: {
+          vendor: [
+            'react', 
+            'react-dom', 
+            'react-router-dom',
+            'react-hook-form',
+            'lucide-react',
+          ],
+          ui: [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-alert-dialog',
+            '@radix-ui/react-aspect-ratio',
+            '@radix-ui/react-avatar',
+            '@radix-ui/react-checkbox',
+            '@radix-ui/react-collapsible',
+            '@radix-ui/react-context-menu',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-hover-card',
+            '@radix-ui/react-label',
+            '@radix-ui/react-menubar',
+            '@radix-ui/react-navigation-menu',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-progress',
+            '@radix-ui/react-radio-group',
+            '@radix-ui/react-scroll-area',
+            '@radix-ui/react-select',
+            '@radix-ui/react-separator',
+            '@radix-ui/react-slider',
+            '@radix-ui/react-slot',
+            '@radix-ui/react-switch',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-toast',
+            '@radix-ui/react-toggle',
+            '@radix-ui/react-toggle-group',
+            '@radix-ui/react-tooltip',
+          ],
         },
         // Optimize chunk size and reduce requests
         chunkFileNames: 'assets/[name]-[hash].js',

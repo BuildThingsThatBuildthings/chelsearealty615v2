@@ -1,21 +1,19 @@
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// Lazy load pages for better performance
-const Index = lazy(() => import("./pages/Index"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const ResearchLibrary = lazy(() => import("./pages/ResearchLibrary"));
-const Hendersonville = lazy(() => import("./pages/reports/Hendersonville"));
-const Gallatin = lazy(() => import("./pages/reports/Gallatin"));
-const WhiteHouse = lazy(() => import("./pages/reports/WhiteHouse"));
-const NashvilleMarket = lazy(() => import("./pages/reports/NashvilleMarket"));
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const TermsOfService = lazy(() => import("./pages/TermsOfService"));
-const FormSuccess = lazy(() => import("./pages/FormSuccess"));
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+import ResearchLibrary from "./pages/ResearchLibrary";
+import Hendersonville from "./pages/reports/Hendersonville";
+import Gallatin from "./pages/reports/Gallatin";
+import WhiteHouse from "./pages/reports/WhiteHouse";
+import NashvilleMarket from "./pages/reports/NashvilleMarket";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import FormSuccess from "./pages/FormSuccess";
 
 // Loading fallback component
 const PageLoader = () => (

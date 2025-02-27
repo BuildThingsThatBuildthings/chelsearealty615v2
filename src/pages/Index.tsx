@@ -1,18 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Instagram } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { ConnectDialog } from "@/components/ConnectDialog";
 import { FloatingConnectButton } from "@/components/FloatingConnectButton";
-
-// Lazy load non-critical components
-const MovingToolkitDialog = lazy(() => import("@/components/MovingToolkitDialog").then(module => ({ default: module.MovingToolkitDialog })));
-const MortgageCalculatorDialog = lazy(() => import("@/components/MortgageCalculatorDialog").then(module => ({ default: module.MortgageCalculatorDialog })));
-const PropertyValuationDialog = lazy(() => import("@/components/PropertyValuationDialog").then(module => ({ default: module.PropertyValuationDialog })));
-const EmailCaptureForm = lazy(() => import("@/components/EmailCaptureForm").then(module => ({ default: module.EmailCaptureForm })));
+import { MovingToolkitDialog } from "@/components/MovingToolkitDialog";
+import { MortgageCalculatorDialog } from "@/components/MortgageCalculatorDialog";
+import { PropertyValuationDialog } from "@/components/PropertyValuationDialog";
+import { EmailCaptureForm } from "@/components/EmailCaptureForm";
 
 const Index = () => {
   const [email, setEmail] = useState("");
