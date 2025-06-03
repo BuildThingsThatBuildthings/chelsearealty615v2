@@ -93,6 +93,20 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <div dangerouslySetInnerHTML={{ __html: `
+        <!-- Start RAEK Code for opensourcegenius.com -->
+        <script>
+        (function(window, document, id){
+            var script = document.createElement('script');
+            script.id = 'raekTag';
+            script.type = 'text/javascript';
+            script.src = 'https://cdn.raek.net/js/raek.min.js?id='+id;
+            script.async = true;
+            document.getElementsByTagName('head')[0].appendChild(script);
+        })(window, document, "ba428bfceb18f55996da58c2965c411f1fd4ad0ce2f572cabe344f0db3ffe2f126dfd02057e15313ba043fe1af9ca5c6baa18684f0946d2224f3e0e07ffa3446");
+        </script>
+        <!-- End RAEK Code -->
+      ` }} />
     </footer>
   );
 }
