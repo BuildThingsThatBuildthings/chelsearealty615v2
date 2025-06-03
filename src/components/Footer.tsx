@@ -94,7 +94,7 @@ export function Footer() {
         </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: `
-        <!-- Start RAEK Code for opensourcegenius.com -->
+        <!-- Start RAEK Code for chelsearealty615.com -->
         <script>
         (function(window, document, id){
             var script = document.createElement('script');
@@ -103,7 +103,7 @@ export function Footer() {
             script.src = 'https://cdn.raek.net/js/raek.min.js?id='+id;
             script.async = true;
             document.getElementsByTagName('head')[0].appendChild(script);
-        })(window, document, "ba428bfceb18f55996da58c2965c411f1fd4ad0ce2f572cabe344f0db3ffe2f126dfd02057e15313ba043fe1af9ca5c6baa18684f0946d2224f3e0e07ffa3446");
+        })(window, document, "48f979ea7dab60a2d686d45d79f535f44677fb8b715a368515751e728ecf1c9f1cd03d8eec17953b3e07501d66641a12bbd7388e62b0ebf3f883e52f8ff692b7");
         </script>
         <!-- End RAEK Code -->
       ` }} />
