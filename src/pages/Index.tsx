@@ -9,7 +9,6 @@ import { ConnectDialog } from "@/components/ConnectDialog";
 import { FloatingConnectButton } from "@/components/FloatingConnectButton";
 import { MovingToolkitDialog } from "@/components/MovingToolkitDialog";
 import { MortgageCalculatorDialog } from "@/components/MortgageCalculatorDialog";
-import { PropertyValuationDialog } from "@/components/PropertyValuationDialog";
 import { EmailCaptureForm } from "@/components/EmailCaptureForm";
 
 const Index = () => {
@@ -151,8 +150,8 @@ const Index = () => {
                 Take advantage of these complimentary resources to help with your home buying journey.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="p-6 bg-white/80 backdrop-blur hover:shadow-xl transition-shadow">
+            <div className="flex justify-center">
+              <Card className="p-6 bg-white/80 backdrop-blur hover:shadow-xl transition-shadow max-w-sm">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -170,24 +169,6 @@ const Index = () => {
                       Calculate Now
                     </Button>
                   </MortgageCalculatorDialog>
-                </div>
-              </Card>
-              <Card className="p-6 bg-white/80 backdrop-blur hover:shadow-xl transition-shadow">
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">Free Property Valuation</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Request a Comparative Market Analysis to know your home's value
-                  </p>
-                  <PropertyValuationDialog>
-                    <Button variant="link" className="mt-4">
-                      Request CMA
-                    </Button>
-                  </PropertyValuationDialog>
                 </div>
               </Card>
             </div>
